@@ -1,16 +1,21 @@
 var selectElementsStartingWithA = function(array) {
-  var newArray = [];
-  array.map(function(element) {
-    if (element[0] === 'a') {
-      newArray.push(element);
-    }
+  return array.filter(function(element) {
+    return element[0] === 'a';
   });
-  return newArray;
 };
 
 var selectElementsStartingWithVowel = function(array) {
-  return 'Write your method here';
-}
+  var startsWithVowel = function(word) {
+    var vowels = ['a', 'e', 'i', 'o', 'u'];
+    for (var i = 0; i < vowels.length; i++) {
+      if (word[0] === vowels[i]) {
+        return true;
+      }
+    }
+    return false;
+  };
+  return array.filter(startsWithVowel);
+};
 
 var removeNullElements = function(array) {
   return 'Write your method here';
