@@ -1,10 +1,12 @@
 var selectElementsStartingWithA = function(array) {
-  return 'Write your method here';
-}
-
-var selectElementsStartingWithA = function(array) {
-  return 'Write your method here';
-}
+  var newArray = [];
+  array.map(function(element) {
+    if (element[0] === 'a') {
+      newArray.push(element);
+    }
+  });
+  return newArray;
+};
 
 var selectElementsStartingWithVowel = function(array) {
   return 'Write your method here';
