@@ -27,12 +27,59 @@ var removeNullAndFalseElements = function(array) {
 }
 
 var reverseWordsInArray = function(array) {
-  return 'Write your method here';
+  function reverseString(string) {
+    function loop(string, newString) {
+      if (string.length === 0) {
+        return newString;
+      }
+      newString += string[string.length - 1];
+      string = string.slice(0, string.length - 1);
+      return loop(string, newString);
+    }
+    return loop(string, "");
+  };
+
+  return array.map(reverseString);
 }
 
+// [1,2,3]
+// [1,2,3]
+
+// [[1,2],[1,3]]
+// [[2,3]]
+
 var everyPossiblePair = function(array) {
-  return 'Write your method here';
-}
+  array.sort();
+  var pairs = [];
+  var unnusedNames = (function() {
+    var hash = {};
+
+    array.forEach(function(item) {
+      hash[item] = '';
+    });
+
+    return hash;
+  }());
+
+  array.forEach(function(studentA) {
+    if(!unnusedNames.hasOwnProperty(studentA)) return;
+
+    var newpairs =
+      array
+      .filter(function notStudentAandNotPreviouslyUsed(studentB) {
+        return studentA !== studentB && unnusedNames.hasOwnProperty(studentB);
+      })
+      .map(function pairStudentAandStudentB(studentB) {
+        return [studentA,studentB];
+      });
+
+    if(newpairs.length > 0) pairs = pairs.concat(newpairs);
+
+    delete unnusedNames[studentA];
+  });
+
+  return pairs;
+};
 
 var allElementsExceptFirstThree = function(array) {
   return 'Write your method here';
