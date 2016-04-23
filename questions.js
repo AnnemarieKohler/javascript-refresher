@@ -7,12 +7,9 @@ var selectElementsStartingWithA = function(array) {
 var selectElementsStartingWithVowel = function(array) {
   var startsWithVowel = function(word) {
     var vowels = ['a', 'e', 'i', 'o', 'u'];
-    for (var i = 0; i < vowels.length; i++) {
-      if (word[0] === vowels[i]) {
-        return true;
-      }
-    }
-    return false;
+    return vowels.some(function(element) {
+      return word[0] === element
+    });
   };
   return array.filter(startsWithVowel);
 };
