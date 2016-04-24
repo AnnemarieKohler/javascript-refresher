@@ -82,7 +82,9 @@ var everyPossiblePair = function(array) {
 };
 
 var allElementsExceptFirstThree = function(array) {
-  return 'Write your method here';
+  return array.filter(function(_, index) {
+    return index > 2;
+  });
 }
 
 var addElementToBeginning = function(array, element) {
