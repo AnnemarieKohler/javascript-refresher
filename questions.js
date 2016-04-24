@@ -87,24 +87,29 @@ var addElementToBeginning = function(arr, element) {
 
 var sortByLastLetter = function(array) {
   return array.sort(function(a, b){
-    var lastOfA = a[a.length-1]
-    var lastOfB = b[b.length-1]
+    var lastOfA = a[a.length-1];
+    var lastOfB = b[b.length-1];
     if (lastOfA < lastOfB) return -1;
     if (lastOfA > lastOfB) return 1;
     return 0;
   });
-}
+};
 
 var getFirstHalf = function(string) {
-  return 'Write your method here';
+  var halfOfString = Math.round(string.length / 2);
+  return string.slice(0,halfOfString);
 }
 
 var makeNegative = function(number) {
-  return 'Write your method here';
+  if (number > 0) return (number * (-1));
+  return number;
 }
 
 var numberOfPalindromes = function(array) {
-  return 'Write your method here';
+  var palindromes = array.filter(function(element) {
+    if (element === element.split('').reverse().join('')) return element;
+  });
+  return palindromes.length;
 }
 
 var shortestWord = function(array) {
