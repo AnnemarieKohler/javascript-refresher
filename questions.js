@@ -40,13 +40,7 @@ var reverseWordsInArray = function(array) {
   };
 
   return array.map(reverseString);
-}
-
-// [1,2,3]
-// [1,2,3]
-
-// [[1,2],[1,3]]
-// [[2,3]]
+};
 
 var everyPossiblePair = function(array) {
   array.sort();
@@ -87,12 +81,18 @@ var allElementsExceptFirstThree = function(array) {
   });
 }
 
-var addElementToBeginning = function(array, element) {
-  return 'Write your method here';
+var addElementToBeginning = function(arr, element) {
+  return [element].concat(arr);
 }
 
 var sortByLastLetter = function(array) {
-  return 'Write your method here';
+  return array.sort(function(a, b){
+    var lastOfA = a[a.length-1]
+    var lastOfB = b[b.length-1]
+    if (lastOfA < lastOfB) return -1;
+    if (lastOfA > lastOfB) return 1;
+    return 0;
+  });
 }
 
 var getFirstHalf = function(string) {
