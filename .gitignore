@@ -1,2 +1,4 @@
 solutions.js
 SpecRunner2.html
+node_modules
+.eslintrc.json
