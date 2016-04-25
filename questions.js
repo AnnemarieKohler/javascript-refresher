@@ -107,46 +107,79 @@ var makeNegative = function(number) {
 
 var numberOfPalindromes = function(array) {
   var palindromes = array.filter(function(element) {
-    if (element === element.split('').reverse().join('')) return element;
+    return element === element.split('').reverse().join('');
   });
   return palindromes.length;
-}
+};
 
 var shortestWord = function(array) {
-  return 'Write your method here';
+  return array.reduce(function(previousAccumulatedValue, currentValue) {
+    if (currentValue.length < previousAccumulatedValue.length) {
+      previousAccumulatedValue = currentValue;
+    }
+    return previousAccumulatedValue;
+  }, array[0]);
 }
 
 var longestWord = function(array) {
-  return 'Write your method here';
+  return array.reduce(function(previousAccumulatedValue, currentValue) {
+    if (currentValue.length > previousAccumulatedValue.length) {
+      previousAccumulatedValue = currentValue;
+    }
+    return previousAccumulatedValue;
+  }, array[0]);
 }
 
 var sumNumbers = function(array) {
-  return 'Write your method here';
-}
+  return array.reduce(function(sum, num) {
+    return sum + num;
+  });
+};
 
 var repeatElements = function(array) {
-  return 'Write your method here';
-}
+  return array.concat(array);
+};
 
 var stringToNumber = function(string) {
-  return 'Write your method here';
-}
+  return parseInt(string);
+};
 
 var calculateAverage = function(array) {
-  return 'Write your method here';
-}
+  var sum = array.reduce(function(sum, element) {
+    return sum + element;
+  });
+  return sum / array.length;
+};
 
 var getElementsUntilGreaterThanFive = function(array) {
-  return 'Write your method here';
-}
+  var newArr = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] < 6) {
+      newArr.push(array[i]);
+    } else {
+      return newArr;
+    }
+  }
+  return newArr;
+};
 
 var convertArrayToObject = function(array) {
-  return 'Write your method here';
-}
+  var obj = {};
+  for(var i = 0; i < array.length; i++) {
+    obj[array[i]] = array[i+1];
+    i += 1;
+  }
+  return obj;
+};
 
 var getAllLetters = function(array) {
-  return 'Write your method here';
-}
+  var allLetters = array.join('').split('').sort();
+  var noDuplicates = [];
+  for(var i = 0; i < allLetters.length; i++) {
+    if (!noDuplicates.includes(allLetters[i])) noDuplicates.push(allLetters[i]);
+  }
+  return noDuplicates;
+};
 
 var swapKeysAndValues = function(object) {
   return 'Write your method here';
