@@ -189,8 +189,12 @@ var swapKeysAndValues = function(obj) {
   return newObj;
 }
 
-var sumKeysAndValues = function(object) {
-  return 'Write your method here';
+var sumKeysAndValues = function(obj) {
+  var arr = [];
+  for(var key in obj) {
+    arr.push(parseInt(key),obj[key]);
+  }
+  return arr.reduce( (sum, val) => sum + val);
 }
 
 var removeCapitals = function(string) {
