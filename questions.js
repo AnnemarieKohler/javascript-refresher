@@ -181,8 +181,12 @@ var getAllLetters = function(array) {
   return noDuplicates;
 };
 
-var swapKeysAndValues = function(object) {
-  return 'Write your method here';
+var swapKeysAndValues = function(obj) {
+  var newObj = {};
+  for (var key in obj) {
+    newObj[obj[key]] = key;
+  }
+  return newObj;
 }
 
 var sumKeysAndValues = function(object) {
