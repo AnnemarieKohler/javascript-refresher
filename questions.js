@@ -197,8 +197,13 @@ var sumKeysAndValues = function(obj) {
   return arr.reduce( (sum, val) => sum + val);
 }
 
-var removeCapitals = function(string) {
-  return 'Write your method here';
+var removeCapitals = function(phrase) {
+  var splitPhrase = phrase.split(' ');
+  return splitPhrase.map(function(word) {
+    return word.split('').filter(function(letter) {
+      return letter !== letter.toUpperCase();
+    }).join('');
+  }).join(' ');
 }
 
 var roundUp = function(number) {
